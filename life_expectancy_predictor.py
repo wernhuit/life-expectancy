@@ -106,4 +106,4 @@ RFR.fit(X, y)
 prediction = RFR.predict(df)
 
 st.subheader('Predicted Life Expectancy')
-st.subheader({round(prediction[0],1)})
+st.subheader(round(prediction[0],1))
