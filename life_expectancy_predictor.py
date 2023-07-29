@@ -3,6 +3,8 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler #standardisation
 from sklearn.ensemble import RandomForestRegressor
 
+st.set_theme("config.toml")
+
 original = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/Life%20Expectancy%20Data.csv?token=GHSAT0AAAAAACFU7G72VMSR3WEMVMATFZOIZGFAJMA')
 preview = original.head(20)
 
