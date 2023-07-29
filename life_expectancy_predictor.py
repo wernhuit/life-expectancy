@@ -3,6 +3,22 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler #standardisation
 from sklearn.ensemble import RandomForestRegressor
 
+style = """
+    <style>
+    .css-10trblm e16nr0p33 {
+        color: violet;
+    }
+    .css-1lcbmhc e1fqkh3o0 {
+        background-color: #331D2C;
+        opacity: 0.8;
+        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #331D2C 21px ), repeating-linear-gradient( #3F2E3E55, #3F2E3E );
+    }
+    </style>
+"""
+
+# Apply the custom CSS to the subheader
+st.markdown(style, unsafe_allow_html=True)
+
 original = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/Life%20Expectancy%20Data.csv?token=GHSAT0AAAAAACFU7G72VMSR3WEMVMATFZOIZGFAJMA')
 preview = original.head(20)
 
@@ -14,10 +30,10 @@ Let's predict _life expectancy_!
 Slide the sliders on the left sidebar to predict :)
 """)
 
-with st.expander("**Background**"):
+with st.expander("Background"):
     st.write("""_Life Expectancy_ is the average number of years a person is expected to live for based on demographics. 
     This model is created to help insurance companies (target user) predict the life expectancy in age for their clients and then suggest the appropriate policies to them.""")
-with st.expander("**Features for prediction**"):
+with st.expander("Features for prediction"):
     st.write("""
     1. alcohol: Alcohol consumption recorded in litres of pure alcohol per capita (15+ years old)
     2. hepatitis_b: Hepatitis B (HepB) immunization coverage among 1-year-olds (%)
@@ -30,10 +46,10 @@ with st.expander("**Features for prediction**"):
     9. schooling: Average number of years spent on schooling
     10. thinness_5-19_years: Prevalence of thinness among children and adolescents for Age 5 to 19 (%)
     """)
-with st.expander('**The Dataset**'):
+with st.expander('The Dataset'):
     st.write('This dataset can be found on Kaggle, https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who, and is from the World Health Organisation (WHO).')
     st.write('Below is the preview of the ORIGINAL dataset: ', preview)
-with st.expander('**The Model**'):
+with st.expander('The Model'):
     st.write('We will be using _RandomForestRegressor_ for our model! It is a bagging ensemble learning algorithm that combines multiple decision trees to create a more accurate model.')
 
 st.sidebar.header('Input Desired Parameters Here!')
@@ -66,6 +82,7 @@ df = user_input_features()
 
 st.subheader('Parameters Inputed: ')
 st.write(df)
+st.caption('measles and hiv/aids is cube root transformed here')
 
 life = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/final_clean_transformed_dataset.csv?token=GHSAT0AAAAAACFU7G72DTANKLRPQGQYWECCZGFAKKA')
 
@@ -89,4 +106,4 @@ RFR.fit(X, y)
 prediction = RFR.predict(df)
 
 st.subheader('Predicted Life Expectancy')
-st.subheader(f':violet[{round(prediction[0],1)}]')
+st.subheader({round(prediction[0],1)})
