@@ -10,11 +10,6 @@ background-color: #331D2C;
 opacity: 0.8;
 background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #331D2C 30px ), repeating-linear-gradient( #3F2E3E55, #3F2E3E );
 }
---primary-color = #A78295
---background-color = #3F2E3E
---secondary-background-color = #331D2C
---text-color = #EFE1D1
---font = Serif
 </style>
 """
 
