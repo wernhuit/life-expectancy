@@ -3,22 +3,6 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler #standardisation
 from sklearn.ensemble import RandomForestRegressor
 
-style = """
-    <style>
-    .css-10trblm e16nr0p33 {
-        color: violet;
-    }
-    .css-1lcbmhc e1fqkh3o0 {
-        background-color: #331D2C;
-        opacity: 0.8;
-        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #331D2C 21px ), repeating-linear-gradient( #3F2E3E55, #3F2E3E );
-    }
-    </style>
-"""
-
-# Apply the custom CSS to the subheader
-st.markdown(style, unsafe_allow_html=True)
-
 original = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/Life%20Expectancy%20Data.csv?token=GHSAT0AAAAAACFU7G72VMSR3WEMVMATFZOIZGFAJMA')
 preview = original.head(20)
 
