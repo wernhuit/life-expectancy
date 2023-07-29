@@ -89,4 +89,4 @@ RFR.fit(X, y)
 prediction = RFR.predict(df)
 
 st.subheader('Predicted Life Expectancy')
-st.markdown(f'<span style="color: violet;">{round(prediction[0], 1)}</span>', unsafe_allow_html=True)
+st.subheader(f':violet[{round(prediction[0],1)}]')
