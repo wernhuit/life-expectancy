@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler #standardisation
 from sklearn.ensemble import RandomForestRegressor
 
-original = pd.read_csv(r'C:\Users\wernh\Desktop\MLDP\Project\Life Expectancy Data.csv')
+original = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/Life%20Expectancy%20Data.csv?token=GHSAT0AAAAAACFU7G72VMSR3WEMVMATFZOIZGFAJMA')
 preview = original.head(20)
 
 st.image('https://www.incimages.com/uploaded_files/image/1920x1080/getty_178026691_20001333181884387489_201886.jpg', caption='Credits: https://www.inc.com/nicolas-cole/30-things-about-life-everyone-should-learn-before-turning-30.html')
@@ -67,7 +67,7 @@ df = user_input_features()
 st.subheader('Parameters Inputed: ')
 st.write(df)
 
-life = pd.read_csv(r'C:\Users\wernh\Desktop\MLDP\Project\final_clean_transformed_dataset.csv')
+life = pd.read_csv(r'https://raw.githubusercontent.com/wernhuit/life-expectancy/main/final_clean_transformed_dataset.csv?token=GHSAT0AAAAAACFU7G72DTANKLRPQGQYWECCZGFAKKA')
 
 y = life['life_expectancy']
 X = life.iloc[:,2:]
